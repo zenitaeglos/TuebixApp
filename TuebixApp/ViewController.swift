@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         if (segue.identifier == "DetailSegue") {
             let controller = segue.destination  as! TalkDetailsViewController
             let row = (sender as! IndexPath).row
-            controller.xmlItem = xmlItems?[row]
+            controller.xmlItem = currentxmlItems?[row]
         }
     }
 }
