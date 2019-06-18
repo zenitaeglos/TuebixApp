@@ -26,9 +26,8 @@ class ViewController: UIViewController {
         feedParser.parseFeed(url: "https://www.tuebix.org/2019/giggity.xml") {
             (xmlItems) in
             self.xmlItems = xmlItems
-            
             OperationQueue.main.addOperation {
-                self.talksTableView.reloadSections(IndexSet(integer: 0), with: .left)
+                self.talksTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
             }
         }
     }
@@ -56,7 +55,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! TalkTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TalkTableViewCell else {
+            return UITableViewCell()
+        }
         
         if let item = xmlItems?[indexPath.row] {
             cell.setAttributes(xmlAttributes: item)
