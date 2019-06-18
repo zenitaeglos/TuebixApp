@@ -11,13 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     
     private var xmlItems: [XmlTags]?
+    private var currentxmlItems: [XmlTags]?
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var talksTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         talksTableView.delegate = self
         talksTableView.dataSource = self
+        searchBar.delegate = self
         fetchData()
     }
     
@@ -26,6 +29,7 @@ class ViewController: UIViewController {
         feedParser.parseFeed(url: "https://www.tuebix.org/2019/giggity.xml") {
             (xmlItems) in
             self.xmlItems = xmlItems
+            self.currentxmlItems = xmlItems
             OperationQueue.main.addOperation {
                 self.talksTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
             }
@@ -44,7 +48,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let xmlItems = xmlItems else {
+        guard let xmlItems = currentxmlItems else {
             return 0
         }
         return xmlItems.count
@@ -59,7 +63,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        if let item = xmlItems?[indexPath.row] {
+        if let item = currentxmlItems?[indexPath.row] {
             cell.setAttributes(xmlAttributes: item)
         }
         
@@ -67,5 +71,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "DetailSegue", sender: indexPath)
+    }
+}
+
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            currentxmlItems = xmlItems
+            talksTableView.reloadData()
+            return
+        }
+        currentxmlItems = xmlItems?.filter({ (XmlTags) -> Bool in
+            XmlTags.title.lowercased().contains(searchText.lowercased())
+        })
+        talksTableView.reloadData()
     }
 }
