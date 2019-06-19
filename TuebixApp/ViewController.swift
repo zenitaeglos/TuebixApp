@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         talksTableView.delegate = self
         talksTableView.dataSource = self
         searchBar.delegate = self
+        searchBar.placeholder = "Search talk"
+        
         fetchData()
     }
     
@@ -36,7 +38,10 @@ class ViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue:
+        UIStoryboardSegue, sender: Any?) {
+        searchBar.resignFirstResponder()
+        
         if (segue.identifier == "DetailSegue") {
             let controller = segue.destination  as! TalkDetailsViewController
             let row = (sender as! IndexPath).row
@@ -87,4 +92,12 @@ extension ViewController: UISearchBarDelegate {
         })
         talksTableView.reloadData()
     }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.becomeFirstResponder()
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+
 }
