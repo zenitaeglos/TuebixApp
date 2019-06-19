@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sph-2g-rDp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MpX-iX-dyg">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IEs-YS-Ptk">
-                                <rect key="frame" x="0.0" y="20" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="793"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-alpha-background" translatesAutoresizingMaskIntoConstraints="NO" id="fhF-Zb-hCC">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
@@ -29,7 +29,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AuG-J2-xRi">
-                                        <rect key="frame" x="0.0" y="276" width="414" height="566"/>
+                                        <rect key="frame" x="0.0" y="276" width="414" height="517"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="A0e-3I-khD" customClass="TalkTableViewCell" customModule="TuebixApp" customModuleProvider="target">
@@ -107,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357.9710144927537" y="87.723214285714278"/>
+            <point key="canvasLocation" x="1188" y="-260"/>
         </scene>
         <!--Title-->
         <scene sceneID="Z8e-IK-2cB">
@@ -124,19 +124,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="KWG-br-91f">
-                                <rect key="frame" x="20" y="558" width="374" height="255"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XyC-aM-LLC">
-                                <rect key="frame" x="20" y="217" width="374" height="333"/>
+                                <rect key="frame" x="20" y="359" width="374" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h76-Jy-rRQ">
-                                <rect key="frame" x="20" y="173" width="269" height="21"/>
+                                <rect key="frame" x="20" y="232" width="269" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP5-vi-Yc3">
+                                <rect key="frame" x="20" y="276" width="367" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -152,18 +155,82 @@
                     <connections>
                         <outlet property="descriptionTextView" destination="XyC-aM-LLC" id="ThN-KF-7M4"/>
                         <outlet property="durationLabel" destination="h76-Jy-rRQ" id="KWY-Dj-u1V"/>
+                        <outlet property="startTimeLabel" destination="sP5-vi-Yc3" id="CIs-nf-rbX"/>
                         <outlet property="talkTitleLabel" destination="7hk-Ev-oJM" id="a1p-tc-C2Z"/>
                         <outlet property="titleBarText" destination="pzc-NY-anO" id="RIq-BQ-rDl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tF2-LU-7IN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2427.536231884058" y="70.982142857142847"/>
+            <point key="canvasLocation" x="1911.594202898551" y="-260.49107142857144"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hio-AG-BzQ">
+            <objects>
+                <tabBarController id="MpX-iX-dyg" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hix-ll-P3G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sph-2g-rDp" kind="relationship" relationship="viewControllers" id="SB4-wT-XGW"/>
+                        <segue destination="RM1-kl-3Mr" kind="relationship" relationship="viewControllers" id="z52-Ol-DTh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6b-sc-Ig6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1487" y="-15"/>
+        </scene>
+        <!--Anfahrt-->
+        <scene sceneID="nhG-eB-zXb">
+            <objects>
+                <viewController title="Anfahrt" id="RM1-kl-3Mr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c0X-Sl-RFN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-p3-xBX">
+                                <rect key="frame" x="20" y="102" width="374" height="377"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="377" id="6lk-Cf-tFV"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zki-NV-ztM">
+                                <rect key="frame" x="20" y="487" width="374" height="326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Der Tübix findet auf dem Sand in Tübingen statt. In diesen Gebäuden ist das Wilhelm-Schickard-Institut für Informatik untergebracht.
+
+Mit der Buslinie 2 ab Hauptbahnhof Tübingen in Richtung “Sand - Waldhäuser Ost” bis Haltestelle “Sand Drosselweg” (samstags kostenlos).
+
+Parkplätze gibt es in dem großen Hof hinter dem Gebäude Sand 13 bzw. 14 (48°32’06.2”N 9°04’19.9”E).</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zki-NV-ztM" firstAttribute="top" secondItem="Ghg-p3-xBX" secondAttribute="bottom" constant="8" id="HV6-SA-4yZ"/>
+                            <constraint firstItem="Zki-NV-ztM" firstAttribute="bottom" secondItem="eYU-8q-IAL" secondAttribute="bottom" id="Odt-au-L6k"/>
+                            <constraint firstItem="Zki-NV-ztM" firstAttribute="leading" secondItem="eYU-8q-IAL" secondAttribute="leading" constant="20" id="VGg-o9-Iu1"/>
+                            <constraint firstItem="Ghg-p3-xBX" firstAttribute="leading" secondItem="Zki-NV-ztM" secondAttribute="leading" id="h92-iQ-Ue2"/>
+                            <constraint firstItem="Ghg-p3-xBX" firstAttribute="top" secondItem="eYU-8q-IAL" secondAttribute="top" constant="58" id="jBb-i9-bV2"/>
+                            <constraint firstItem="eYU-8q-IAL" firstAttribute="trailing" secondItem="Zki-NV-ztM" secondAttribute="trailing" constant="20" id="svg-on-6ts"/>
+                            <constraint firstItem="Ghg-p3-xBX" firstAttribute="trailing" secondItem="Zki-NV-ztM" secondAttribute="trailing" id="zHy-9F-xCa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eYU-8q-IAL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="NTI-fc-jzE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cj9-1v-rpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343.47826086956525" y="326.78571428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hnk-Ka-qkt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sph-2g-rDp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="bYe-s2-Zao"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ynd-4i-maj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -176,7 +243,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10p-mp-gV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457.97101449275368" y="88.392857142857139"/>
+            <point key="canvasLocation" x="383" y="-260"/>
         </scene>
     </scenes>
     <resources>

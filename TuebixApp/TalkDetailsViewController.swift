@@ -16,6 +16,7 @@ class TalkDetailsViewController: UIViewController {
     
     @IBOutlet weak var talkTitleLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -30,6 +31,9 @@ class TalkDetailsViewController: UIViewController {
         }
         if let duration = xmlItem?.duration {
             durationLabel.text = "Duration: " + duration
+        }
+        if let startTime = xmlItem?.start {
+            startTimeLabel.text = "Start: " + startTime
         }
     }
     
