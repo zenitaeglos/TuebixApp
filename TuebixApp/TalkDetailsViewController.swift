@@ -37,6 +37,9 @@ class TalkDetailsViewController: UIViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        descriptionTextView.setContentOffset(.zero, animated: false)
+    }
 
     /*
     // MARK: - Navigation
