@@ -226,7 +226,7 @@
                                     <constraint firstAttribute="height" constant="230" id="0MU-z2-sey"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TqC-N9-bDL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqC-N9-bDL">
                                 <rect key="frame" x="20" y="402" width="374" height="391"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Der Tübix findet auf dem Sand in Tübingen statt. In diesen Gebäuden ist das Wilhelm-Schickard-Institut für Informatik untergebracht.
@@ -254,7 +254,7 @@ Parkplätze gibt es in dem großen Hof hinter dem Gebäude Sand 13 bzw. 14 (48°
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eYU-8q-IAL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="NTI-fc-jzE"/>
+                    <tabBarItem key="tabBarItem" title="Anfahrt" id="NTI-fc-jzE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cj9-1v-rpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
