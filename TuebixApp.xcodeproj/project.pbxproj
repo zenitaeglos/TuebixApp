@@ -14,6 +14,9 @@
 		D910E1D622AE9F9E00EC6511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D910E1D522AE9F9E00EC6511 /* Assets.xcassets */; };
 		D910E1D922AE9F9E00EC6511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D910E1D722AE9F9E00EC6511 /* LaunchScreen.storyboard */; };
 		D910E1E122AEB2FE00EC6511 /* xmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910E1E022AEB2FE00EC6511 /* xmlParser.swift */; };
+		D940FDED22CE29C90063189C /* FavoritesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D940FDEB22CE29C90063189C /* FavoritesModel.xcdatamodeld */; };
+		D940FDEF22CE31830063189C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FDEE22CE31830063189C /* FavoritesViewController.swift */; };
+		D940FDF122CE42970063189C /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */; };
 		D96F091D22AFA4DA00ED305F /* TalkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F091C22AFA4DA00ED305F /* TalkTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		D910E1D822AE9F9E00EC6511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D910E1DA22AE9F9E00EC6511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D910E1E022AEB2FE00EC6511 /* xmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xmlParser.swift; sourceTree = "<group>"; };
+		D940FDEC22CE29C90063189C /* FavoritesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesModel.xcdatamodel; sourceTree = "<group>"; };
+		D940FDEE22CE31830063189C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		D96F091C22AFA4DA00ED305F /* TalkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +69,10 @@
 				D96F091C22AFA4DA00ED305F /* TalkTableViewCell.swift */,
 				D910E1CE22AE9F9D00EC6511 /* AppDelegate.swift */,
 				D910E1D022AE9F9D00EC6511 /* ViewController.swift */,
+				D940FDEB22CE29C90063189C /* FavoritesModel.xcdatamodeld */,
 				D910E1D222AE9F9D00EC6511 /* Main.storyboard */,
+				D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */,
+				D940FDEE22CE31830063189C /* FavoritesViewController.swift */,
 				D90B75A322B2793A002EBC5E /* TalkDetailsViewController.swift */,
 				D910E1E022AEB2FE00EC6511 /* xmlParser.swift */,
 				D910E1D522AE9F9E00EC6511 /* Assets.xcassets */,
@@ -146,9 +155,12 @@
 			files = (
 				D910E1D122AE9F9D00EC6511 /* ViewController.swift in Sources */,
 				D96F091D22AFA4DA00ED305F /* TalkTableViewCell.swift in Sources */,
+				D940FDEF22CE31830063189C /* FavoritesViewController.swift in Sources */,
 				D910E1CF22AE9F9D00EC6511 /* AppDelegate.swift in Sources */,
 				D90B75A422B2793A002EBC5E /* TalkDetailsViewController.swift in Sources */,
+				D940FDF122CE42970063189C /* FavoritesTableViewCell.swift in Sources */,
 				D910E1E122AEB2FE00EC6511 /* xmlParser.swift in Sources */,
+				D940FDED22CE29C90063189C /* FavoritesModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D940FDEB22CE29C90063189C /* FavoritesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D940FDEC22CE29C90063189C /* FavoritesModel.xcdatamodel */,
+			);
+			currentVersion = D940FDEC22CE29C90063189C /* FavoritesModel.xcdatamodel */;
+			path = FavoritesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D910E1C322AE9F9D00EC6511 /* Project object */;
 }

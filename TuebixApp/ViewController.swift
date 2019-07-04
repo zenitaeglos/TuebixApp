@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -24,6 +25,12 @@ class ViewController: UIViewController {
         searchBar.placeholder = "Search talk"
         
         fetchData()
+        
+        //self.save(value: "c++")
+        //self.save(value: "java shit")
+        //self.save(value: "python bien")
+        //self.deleteValue(title: "Boot Loader Spec + sd-boot")
+        //self.retrieveValues()
     }
     
     func fetchData() {
@@ -99,5 +106,83 @@ extension ViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
 
+}
+
+
+extension ViewController {
+    func save(value: String) {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context = appDelegate.persistentContainer.viewContext
+            
+            guard let entityDescription = NSEntityDescription.entity(forEntityName: "Favorites",
+                                                                     in: context) else {return }
+            let newValue = NSManagedObject(entity: entityDescription,
+                                           insertInto: context)
+            newValue.setValue(value, forKey: "talkTitle")
+            newValue.setValue("42", forKey: "person")
+            
+            do {
+                try context.save()
+                print("Saved \(value)")
+            } catch {
+                print("Saving error")
+            }
+        }
+    }
+    
+    func retrieveValues() {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<Favorites>(entityName: "Favorites")
+            
+            do {
+                let results = try context.fetch(fetchRequest)
+                
+                for result in results {
+                    if let talkTitle = result.talkTitle {
+                        print(talkTitle)
+                    }
+                    if let person = result.person {
+                        print(person)
+                    }
+                }
+            } catch {
+                print("Could not retrieve")
+            }
+            
+            
+        }
+    }
+    
+    func deleteValue(title titleOfTalk: String) {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<Favorites>(entityName: "Favorites")
+            
+            do {
+                let results = try context.fetch(fetchRequest)
+                for result in results {
+                    if titleOfTalk == result.talkTitle {
+                        context.delete(result)
+                    }
+                    else {
+                        context.delete(result)
+                    }
+                }
+            } catch {
+                print("Could not delete object")
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                print("Could not save data")
+            }
+        }
+    }
 }
