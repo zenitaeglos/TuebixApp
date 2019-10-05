@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9030B3D2347A47A001ADBEC /* AnfahrtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9030B3C2347A47A001ADBEC /* AnfahrtViewController.swift */; };
 		D90B75A422B2793A002EBC5E /* TalkDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B75A322B2793A002EBC5E /* TalkDetailsViewController.swift */; };
 		D910E1CF22AE9F9D00EC6511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910E1CE22AE9F9D00EC6511 /* AppDelegate.swift */; };
 		D910E1D122AE9F9D00EC6511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910E1D022AE9F9D00EC6511 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9030B3C2347A47A001ADBEC /* AnfahrtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnfahrtViewController.swift; sourceTree = "<group>"; };
 		D90B75A322B2793A002EBC5E /* TalkDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetailsViewController.swift; sourceTree = "<group>"; };
 		D910E1CB22AE9F9D00EC6511 /* TuebixApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuebixApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D910E1CE22AE9F9D00EC6511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				D910E1D022AE9F9D00EC6511 /* ViewController.swift */,
 				D940FDEB22CE29C90063189C /* FavoritesModel.xcdatamodeld */,
 				D910E1D222AE9F9D00EC6511 /* Main.storyboard */,
+				D9030B3C2347A47A001ADBEC /* AnfahrtViewController.swift */,
 				D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */,
 				D940FDEE22CE31830063189C /* FavoritesViewController.swift */,
 				D90B75A322B2793A002EBC5E /* TalkDetailsViewController.swift */,
@@ -156,6 +159,7 @@
 				D910E1D122AE9F9D00EC6511 /* ViewController.swift in Sources */,
 				D96F091D22AFA4DA00ED305F /* TalkTableViewCell.swift in Sources */,
 				D940FDEF22CE31830063189C /* FavoritesViewController.swift in Sources */,
+				D9030B3D2347A47A001ADBEC /* AnfahrtViewController.swift in Sources */,
 				D910E1CF22AE9F9D00EC6511 /* AppDelegate.swift in Sources */,
 				D90B75A422B2793A002EBC5E /* TalkDetailsViewController.swift in Sources */,
 				D940FDF122CE42970063189C /* FavoritesTableViewCell.swift in Sources */,
@@ -309,10 +313,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NS324YBDQX;
 				INFOPLIST_FILE = TuebixApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alejandro.aeglos.TuebixApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -327,10 +333,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NS324YBDQX;
 				INFOPLIST_FILE = TuebixApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alejandro.aeglos.TuebixApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
