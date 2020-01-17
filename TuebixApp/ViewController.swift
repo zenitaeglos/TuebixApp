@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         //self.retrieveValues()
     }
     //TODO set fetchdata in its own class
+    // set function outside
     func fetchData() {
         let feedParser = FeedParser()
         feedParser.parseFeed(url: "https://www.tuebix.org/2019/giggity.xml") {
