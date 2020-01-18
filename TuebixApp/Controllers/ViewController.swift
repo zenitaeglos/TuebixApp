@@ -35,14 +35,13 @@ class ViewController: UIViewController {
     //TODO set fetchdata in its own class
     // set function outside
     func fetchData() {
-        let feedParser = FeedParser()
-        feedParser.parseFeed(url: "https://www.tuebix.org/2019/giggity.xml") {
-            (xmlItems) in
+        /*
+        fetch all data from last conference
+        */
+        NetworkService.shared.getConferences(url: DataSource.shared.lastConference()) { (xmlItems) in
             self.xmlItems = xmlItems
             self.currentxmlItems = xmlItems
-            OperationQueue.main.addOperation {
-                self.talksTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
-            }
+            self.talksTableView.reloadData()
         }
     }
     
