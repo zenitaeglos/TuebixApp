@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         searchBar.placeholder = "Search talk"
         
-        fetchData()
+        fetchData(year: DataSource.shared.lastConference())
         
         //self.save(value: "c++")
         //self.save(value: "java shit")
@@ -34,15 +34,19 @@ class ViewController: UIViewController {
     }
     //TODO set fetchdata in its own class
     // set function outside
-    func fetchData() {
+    func fetchData(year yearChosen: String) {
         /*
         fetch all data from last conference
         */
-        NetworkService.shared.getConferences(url: DataSource.shared.lastConference()) { (xmlItems) in
+        /*
+        NetworkService.shared.getConferences(url: yearChosen, onSuccess: { (xmlItems) in
             self.xmlItems = xmlItems
             self.currentxmlItems = xmlItems
             self.talksTableView.reloadData()
+        }) { (errorMessage) in
+            
         }
+        */
     }
     
     override func prepare(for segue:

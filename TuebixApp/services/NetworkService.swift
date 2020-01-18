@@ -12,9 +12,9 @@ import Foundation
 class NetworkService {
     static let shared = NetworkService()
     
-    let URL_BASE = "https://www.tuebix.org/2019/giggity.xml"
+    //let URL_BASE = "https://www.tuebix.org/2019/giggity.xml"
     
-    let session = URLSession(configuration: .default)
+    //let session = URLSession(configuration: .default)
     
     func getConferences(url xmlUrl: String, onSuccess: @escaping ([XmlTags]) -> Void) {
             let feedParser = FeedParser()

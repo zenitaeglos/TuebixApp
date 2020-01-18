@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MpX-iX-dyg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xok-kE-jId">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -374,7 +373,96 @@ Parkplätze gibt es in dem großen Hof hinter dem Gebäude Sand 13 bzw. 14 (48°
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cj9-1v-rpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426" y="913"/>
+            <point key="canvasLocation" x="-1426" y="760"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="Z16-vM-dGC">
+            <objects>
+                <viewController id="lJ6-0C-Ge1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GPy-Lr-MHF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GaS-je-XWR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="MnP-YB-nyF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TyG-ir-a5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2466" y="2139"/>
+        </scene>
+        <!--Tuebix-->
+        <scene sceneID="8F0-lu-dCk">
+            <objects>
+                <viewController id="qqO-Fa-bbq" customClass="CalenderViewController" customModule="TuebixApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ehi-a8-nuj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yd-L1-R2A">
+                                <rect key="frame" x="159" y="88" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qZA-QV-wAL">
+                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PresentationCell" rowHeight="100" id="Xf4-qS-IhO" customClass="PresentationTableViewCell" customModule="TuebixApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xf4-qS-IhO" id="x1I-U0-RB0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4r-Ut-o2p">
+                                                    <rect key="frame" x="20" y="11" width="375" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titlePresentationLabel" destination="G4r-Ut-o2p" id="nS8-PY-KRz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hKU-9l-lE6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tuebix" id="wfX-Gd-C1s"/>
+                    <connections>
+                        <outlet property="talksTableView" destination="qZA-QV-wAL" id="Jw1-Yc-fjL"/>
+                        <outlet property="yearConferenceTextField" destination="3yd-L1-R2A" id="mrr-mk-lAa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TU0-an-1hf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1742.0289855072465" y="1490.625"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hBm-GF-cN3">
+            <objects>
+                <tabBarController id="xok-kE-jId" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RKg-h9-fiA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7G5-nM-5zJ" kind="relationship" relationship="viewControllers" id="cCL-Cb-Ktp"/>
+                        <segue destination="lJ6-0C-Ge1" kind="relationship" relationship="viewControllers" id="jB1-KR-CPA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWW-IX-oUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3387" y="1816"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hnk-Ka-qkt">
@@ -395,8 +483,28 @@ Parkplätze gibt es in dem großen Hof hinter dem Gebäude Sand 13 bzw. 14 (48°
             </objects>
             <point key="canvasLocation" x="383" y="-260"/>
         </scene>
+        <!--Conferences-->
+        <scene sceneID="dIG-4k-JWs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7G5-nM-5zJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Conferences" image="calendar" catalog="system" id="qQs-qG-91a"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NVG-8j-sC7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qqO-Fa-bbq" kind="relationship" relationship="rootViewController" id="oCY-gT-2YE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSS-2F-Das" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2466.666666666667" y="1490.625"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Unknown" width="2325" height="3287"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
     </resources>
 </document>
