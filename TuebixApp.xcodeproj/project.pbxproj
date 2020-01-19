@@ -18,6 +18,7 @@
 		D92193A623D35D5B00117623 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92193A523D35D5B00117623 /* NetworkService.swift */; };
 		D92193B423D39CF400117623 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92193B323D39CF400117623 /* CalenderViewController.swift */; };
 		D92193B723D3BC8300117623 /* PresentationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92193B623D3BC8300117623 /* PresentationTableViewCell.swift */; };
+		D92193BB23D3E84000117623 /* TalkDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92193BA23D3E84000117623 /* TalkDescriptionViewController.swift */; };
 		D940FDED22CE29C90063189C /* FavoritesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D940FDEB22CE29C90063189C /* FavoritesModel.xcdatamodeld */; };
 		D940FDEF22CE31830063189C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FDEE22CE31830063189C /* FavoritesViewController.swift */; };
 		D940FDF122CE42970063189C /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 		D92193A523D35D5B00117623 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D92193B323D39CF400117623 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderViewController.swift; path = TuebixApp/Controllers/CalenderViewController.swift; sourceTree = SOURCE_ROOT; };
 		D92193B623D3BC8300117623 /* PresentationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTableViewCell.swift; sourceTree = "<group>"; };
+		D92193BA23D3E84000117623 /* TalkDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDescriptionViewController.swift; sourceTree = "<group>"; };
 		D940FDEC22CE29C90063189C /* FavoritesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesModel.xcdatamodel; sourceTree = "<group>"; };
 		D940FDEE22CE31830063189C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		D92193A823D3716B00117623 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D92193BA23D3E84000117623 /* TalkDescriptionViewController.swift */,
 				D92193B323D39CF400117623 /* CalenderViewController.swift */,
 				D910E1D022AE9F9D00EC6511 /* ViewController.swift */,
 				D9030B3C2347A47A001ADBEC /* AnfahrtViewController.swift */,
@@ -221,6 +224,7 @@
 				D910E1D122AE9F9D00EC6511 /* ViewController.swift in Sources */,
 				D96F091D22AFA4DA00ED305F /* TalkTableViewCell.swift in Sources */,
 				D92193B723D3BC8300117623 /* PresentationTableViewCell.swift in Sources */,
+				D92193BB23D3E84000117623 /* TalkDescriptionViewController.swift in Sources */,
 				D940FDEF22CE31830063189C /* FavoritesViewController.swift in Sources */,
 				D9030B3D2347A47A001ADBEC /* AnfahrtViewController.swift in Sources */,
 				D910E1CF22AE9F9D00EC6511 /* AppDelegate.swift in Sources */,

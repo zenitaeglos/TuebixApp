@@ -94,13 +94,13 @@ class CalenderViewController: UIViewController {
          */
         /*
         searchBar.resignFirstResponder()
-        
-        if (segue.identifier == "DetailSegue") {
-            let controller = segue.destination  as! TalkDetailsViewController
+        */
+        if (segue.identifier == "TalkSegue") {
+            let controller = segue.destination  as! TalkDescriptionViewController
             let row = (sender as! IndexPath).row
             controller.xmlItem = currentxmlItems?[row]
         }
-        */
+        
     }
 
 }
@@ -129,6 +129,9 @@ extension CalenderViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "TalkSegue", sender: indexPath)
+    }
     
 }
 

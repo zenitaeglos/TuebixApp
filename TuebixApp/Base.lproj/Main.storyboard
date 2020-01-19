@@ -440,11 +440,28 @@ Parkplätze gibt es in dem großen Hof hinter dem Gebäude Sand 13 bzw. 14 (48°
                     <connections>
                         <outlet property="talksTableView" destination="qZA-QV-wAL" id="Jw1-Yc-fjL"/>
                         <outlet property="yearConferenceTextField" destination="3yd-L1-R2A" id="mrr-mk-lAa"/>
+                        <segue destination="vdr-jA-rHl" kind="show" identifier="TalkSegue" id="ruZ-By-WnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TU0-an-1hf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1742.0289855072465" y="1490.625"/>
+        </scene>
+        <!--Talk Description View Controller-->
+        <scene sceneID="xMT-d8-9cJ">
+            <objects>
+                <viewController id="vdr-jA-rHl" customClass="TalkDescriptionViewController" customModule="TuebixApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zV2-PZ-Hbm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WdD-t1-kcn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="E5E-54-jJS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-LN-2wY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-893" y="1491"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hBm-GF-cN3">
