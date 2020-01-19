@@ -31,6 +31,16 @@ class FeedParser: NSObject, XMLParserDelegate {
     
     private var parserCompletionHandler: (([XmlTags]) -> Void)?
     
+    init(data: Data) {
+        super.init()
+        let parser = XMLParser(data: data)
+        parser.delegate = self
+        parser.parse()
+    }
+    
+    func getXml() -> [XmlTags] {
+        return self.xmlItems
+    }
     
     
     func parseFeed(url: String, completionHandler: @escaping (([XmlTags]) -> Void)) {

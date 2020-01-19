@@ -43,10 +43,17 @@ class CalenderViewController: UIViewController {
         /*
         fetch all data from last conference
         */
-        NetworkService.shared.getConferences(url: yearChosen) { (xmlItems) in
+        NetworkService.shared.getConferences(url: yearChosen, onSuccess: { (xmlItems) in
+            print(xmlItems.count)
             self.xmlItems = xmlItems
             self.currentxmlItems = xmlItems
             self.talksTableView.reloadData()
+        }) { (errorMessage) in
+            let alert = UIAlertController(title: "Something went wrong", message: "We could not retrieve the data, the server might be down", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

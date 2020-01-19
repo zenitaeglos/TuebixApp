@@ -37,7 +37,7 @@
 		D910E1DA22AE9F9E00EC6511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D910E1E022AEB2FE00EC6511 /* xmlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xmlParser.swift; sourceTree = "<group>"; };
 		D92193A523D35D5B00117623 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		D92193B323D39CF400117623 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderViewController.swift; path = TuebixApp/CalenderViewController.swift; sourceTree = SOURCE_ROOT; };
+		D92193B323D39CF400117623 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderViewController.swift; path = TuebixApp/Controllers/CalenderViewController.swift; sourceTree = SOURCE_ROOT; };
 		D92193B623D3BC8300117623 /* PresentationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTableViewCell.swift; sourceTree = "<group>"; };
 		D940FDEC22CE29C90063189C /* FavoritesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritesModel.xcdatamodel; sourceTree = "<group>"; };
 		D940FDEE22CE31830063189C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
