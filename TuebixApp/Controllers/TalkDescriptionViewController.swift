@@ -10,12 +10,21 @@ import UIKit
 
 class TalkDescriptionViewController: UIViewController {
 
+    @IBOutlet weak var descriptionConferenceTextView: UITextView!
+    @IBOutlet weak var titleConferenceLabel: UILabel!
+    @IBOutlet weak var durationConferenceLabel: UILabel!
+    @IBOutlet weak var startConferenceLabel: UILabel!
     var xmlItem: XmlTags?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(xmlItem?.description)
+
+        self.titleConferenceLabel.text = xmlItem?.title
+        self.durationConferenceLabel.text = "Duration: \(xmlItem?.duration ?? "")"
+        self.startConferenceLabel.text = "Start: \(xmlItem?.start ?? "")"
+        self.descriptionConferenceTextView.text = xmlItem?.description
+        
     }
     
 
