@@ -19,9 +19,7 @@ class FavoritesViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
-        self.xmlItems.removeAll()
-        retrieveValues()
-        tableView.reloadData()
+        restartTableView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -39,6 +37,10 @@ class FavoritesViewController: UIViewController {
     }
     */
     override func viewDidAppear(_ animated: Bool) {
+        restartTableView()
+    }
+    
+    func restartTableView() {
         self.xmlItems.removeAll()
         retrieveValues()
         tableView.reloadData()
