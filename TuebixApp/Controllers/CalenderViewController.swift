@@ -13,13 +13,16 @@ class CalenderViewController: UIViewController {
     private var xmlItems: [XmlTags]?
     private var currentxmlItems: [XmlTags]?
 
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var talksTableView: UITableView!
     @IBOutlet weak var yearConferenceTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.searchBar.delegate = self
+        self.searchBar.placeholder = "Search talk"
         self.talksTableView.delegate = self
         self.talksTableView.dataSource = self
         //fetch the current year data
@@ -152,4 +155,30 @@ extension CalenderViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         yearConferenceTextField.text = DataSource.shared.getYearByPosition(position: row)
         fetchData(year: DataSource.shared.getYearConference(year: DataSource.shared.getYearByPosition(position: row)))
     }
+}
+
+extension CalenderViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            currentxmlItems = xmlItems
+            talksTableView.reloadData()
+            return
+        }
+        currentxmlItems = xmlItems?.filter({ (XmlTags) -> Bool in
+            XmlTags.title.lowercased().contains(searchText.lowercased())
+        })
+        talksTableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.becomeFirstResponder()
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+
 }

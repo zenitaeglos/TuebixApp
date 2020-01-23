@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TalkDescriptionViewController: UIViewController {
 
@@ -27,7 +28,10 @@ class TalkDescriptionViewController: UIViewController {
         
     }
     
-
+    @IBAction func saveToFavoritesButtonItemClicked(_ sender: UIBarButtonItem) {
+        save()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -38,4 +42,31 @@ class TalkDescriptionViewController: UIViewController {
     }
     */
 
+}
+
+
+extension TalkDescriptionViewController {
+    func save() {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let context = appDelegate.persistentContainer.viewContext
+            
+            guard let entityDescription = NSEntityDescription.entity(forEntityName: "Favorites",
+                                                                     in: context) else {return }
+            let newValue = NSManagedObject(entity: entityDescription,
+                                           insertInto: context)
+            newValue.setValue(xmlItem?.title, forKey: "talkTitle")
+            newValue.setValue(xmlItem?.persons, forKey: "person")
+            newValue.setValue(xmlItem?.duration, forKey: "duration")
+            newValue.setValue(xmlItem?.start, forKey: "start")
+            newValue.setValue(xmlItem?.room, forKey: "room")
+            newValue.setValue(xmlItem?.description, forKey: "descriptiontalk")
+ 
+            do {
+                try context.save()
+                print("Saved")
+            } catch {
+                print("Saving error")
+            }
+        }
+    }
 }

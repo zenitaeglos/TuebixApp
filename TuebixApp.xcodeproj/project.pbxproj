@@ -24,6 +24,8 @@
 		D940FDF122CE42970063189C /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */; };
 		D96F091D22AFA4DA00ED305F /* TalkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F091C22AFA4DA00ED305F /* TalkTableViewCell.swift */; };
 		D993FC1A23D30DF000B42DFA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993FC1923D30DF000B42DFA /* DataSource.swift */; };
+		D9BDFE8A23DA117300F46CC9 /* FavoritesConferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BDFE8923DA117300F46CC9 /* FavoritesConferencesViewController.swift */; };
+		D9BDFE8C23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BDFE8B23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		D940FDF022CE42970063189C /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		D96F091C22AFA4DA00ED305F /* TalkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTableViewCell.swift; sourceTree = "<group>"; };
 		D993FC1923D30DF000B42DFA /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		D9BDFE8923DA117300F46CC9 /* FavoritesConferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesConferencesViewController.swift; sourceTree = "<group>"; };
+		D9BDFE8B23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesConferenceTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				D9030B3C2347A47A001ADBEC /* AnfahrtViewController.swift */,
 				D940FDEE22CE31830063189C /* FavoritesViewController.swift */,
 				D90B75A322B2793A002EBC5E /* TalkDetailsViewController.swift */,
+				D9BDFE8923DA117300F46CC9 /* FavoritesConferencesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 		D92193B523D3BB4F00117623 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D9BDFE8B23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift */,
 				D96F091C22AFA4DA00ED305F /* TalkTableViewCell.swift */,
 				D92193B623D3BC8300117623 /* PresentationTableViewCell.swift */,
 			);
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D92193B423D39CF400117623 /* CalenderViewController.swift in Sources */,
+				D9BDFE8A23DA117300F46CC9 /* FavoritesConferencesViewController.swift in Sources */,
 				D92193A623D35D5B00117623 /* NetworkService.swift in Sources */,
 				D910E1D122AE9F9D00EC6511 /* ViewController.swift in Sources */,
 				D96F091D22AFA4DA00ED305F /* TalkTableViewCell.swift in Sources */,
@@ -233,6 +240,7 @@
 				D910E1E122AEB2FE00EC6511 /* xmlParser.swift in Sources */,
 				D993FC1A23D30DF000B42DFA /* DataSource.swift in Sources */,
 				D940FDED22CE29C90063189C /* FavoritesModel.xcdatamodeld in Sources */,
+				D9BDFE8C23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
