@@ -15,7 +15,7 @@ class DataSource {
     private let BASE_URL = "https://www.tuebix.org/"
     private let extensionUrl = "/giggity.xml"
     
-    private let years = ["2015", "2016", "2017", "2018", "2019"]
+    private let years = ["2019", "2018", "2017", "2016", "2015"]
     
     
     func lastConference() -> String {
@@ -31,5 +31,12 @@ class DataSource {
             return self.BASE_URL + yearConference + self.extensionUrl
         }
         return String()
+    }
+    
+    func getYearByPosition(position element: Int) -> String {
+        if element < years.count && element > -1 {
+            return self.years[element]
+        }
+        return self.years[self.years.count - 1]
     }
 }

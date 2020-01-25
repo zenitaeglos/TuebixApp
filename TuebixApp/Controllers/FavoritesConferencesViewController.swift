@@ -1,29 +1,37 @@
 //
-//  FavoritesViewController.swift
+//  FavoritesConferencesViewController.swift
 //  TuebixApp
 //
-//  Created by Alejandro Martinez Montero on 04/07/2019.
-//  Copyright © 2019 Alejandro Martinez Montero. All rights reserved.
+//  Created by Alejandro Martinez Montero on 23/01/2020.
+//  Copyright © 2020 Alejandro Martinez Montero. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class FavoritesViewController: UIViewController {
+class FavoritesConferencesViewController: UIViewController {
 
+    @IBOutlet weak var favoritesTableView: UITableView!
+    
     private var xmlItems: [XmlTags] = []
-    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        favoritesTableView.delegate = self
+        favoritesTableView.dataSource = self
+        self.xmlItems.removeAll()
+        retrieveValues()
+        favoritesTableView.reloadData()
 
         // Do any additional setup after loading the view.
-        tableView.dataSource = self
-        tableView.delegate = self
-        restartTableView()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.xmlItems.removeAll()
+        retrieveValues()
+        favoritesTableView.reloadData()
     }
     
 
@@ -36,46 +44,38 @@ class FavoritesViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override func viewDidAppear(_ animated: Bool) {
-        restartTableView()
-    }
-    
-    func restartTableView() {
-        self.xmlItems.removeAll()
-        retrieveValues()
-        tableView.reloadData()
-    }
 
 }
 
 
-extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
+extension FavoritesConferencesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return xmlItems.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell") as? FavoritesTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteConferenceCell") as? FavoritesConferenceTableViewCell else {
+            print("it does not find it")
             return UITableViewCell()
         }
         let item = xmlItems[indexPath.row]
         cell.setAttributes(xmlAttributes: item)
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         deleteValues(index: indexPath.row)
     }
-    
-    
+
+
 }
 
 
-extension FavoritesViewController {
+extension FavoritesConferencesViewController {
     func retrieveValues() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             let context = appDelegate.persistentContainer.viewContext
@@ -136,6 +136,7 @@ extension FavoritesViewController {
             }
         }
         xmlItems.remove(at: position)
-        tableView.reloadData()
+        favoritesTableView.reloadData()
     }
 }
+
