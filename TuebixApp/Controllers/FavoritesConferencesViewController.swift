@@ -34,6 +34,15 @@ class FavoritesConferencesViewController: UIViewController {
         favoritesTableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "favoritesSegue" {
+            let destinationVC = segue.destination as! TalkDescriptionViewController
+            let row = (sender as! IndexPath).row
+            destinationVC.xmlItem = self.xmlItems[row]
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -69,6 +78,10 @@ extension FavoritesConferencesViewController: UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         deleteValues(index: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "favoritesSegue", sender: indexPath)
     }
 
 
