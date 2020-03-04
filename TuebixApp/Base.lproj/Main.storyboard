@@ -15,6 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="527-oE-4x3">
+                                <rect key="frame" x="18" y="428" width="378" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="73U-za-K5K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-pj-rgi">
                                 <rect key="frame" x="0.0" y="64" width="414" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -90,15 +99,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="WiO-pj-rgi" firstAttribute="top" secondItem="GaS-je-XWR" secondAttribute="top" constant="20" id="Jki-Kv-MH0"/>
+                            <constraint firstItem="527-oE-4x3" firstAttribute="centerY" secondItem="GPy-Lr-MHF" secondAttribute="centerY" id="KfR-Ft-dbL"/>
                             <constraint firstItem="WiO-pj-rgi" firstAttribute="leading" secondItem="GaS-je-XWR" secondAttribute="leading" id="LZF-nD-obL"/>
                             <constraint firstItem="WiO-pj-rgi" firstAttribute="bottom" secondItem="GaS-je-XWR" secondAttribute="bottom" id="bP8-LD-1OA"/>
                             <constraint firstItem="WiO-pj-rgi" firstAttribute="trailing" secondItem="GaS-je-XWR" secondAttribute="trailing" id="dnA-No-AKa"/>
+                            <constraint firstItem="GaS-je-XWR" firstAttribute="trailing" secondItem="527-oE-4x3" secondAttribute="trailing" constant="18" id="egX-gz-N9H"/>
+                            <constraint firstItem="527-oE-4x3" firstAttribute="leading" secondItem="GaS-je-XWR" secondAttribute="leading" constant="18" id="gbJ-9m-rUJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GaS-je-XWR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="MnP-YB-nyF"/>
                     <connections>
                         <outlet property="favoritesTableView" destination="WiO-pj-rgi" id="Ab8-sg-48u"/>
+                        <outlet property="noFavoritesLabel" destination="527-oE-4x3" id="33o-Hk-QjX"/>
                         <segue destination="vdr-jA-rHl" kind="show" identifier="favoritesSegue" id="N8h-Df-qTe"/>
                     </connections>
                 </viewController>
