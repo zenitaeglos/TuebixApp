@@ -397,11 +397,18 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
                         <viewLayoutGuide key="safeArea" id="WdD-t1-kcn"/>
                     </view>
                     <navigationItem key="navigationItem" id="E5E-54-jJS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="OmI-xQ-K0p">
-                            <connections>
-                                <action selector="saveToFavoritesButtonItemClicked:" destination="vdr-jA-rHl" id="RAF-Oy-3Wm"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="star" catalog="system" id="OmI-xQ-K0p">
+                                <connections>
+                                    <action selector="saveToFavoritesButtonItemClicked:" destination="vdr-jA-rHl" id="RAF-Oy-3Wm"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="YLx-DW-CBb">
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="vdr-jA-rHl" id="3IL-fR-dx0"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionConferenceTextView" destination="lnm-aQ-WU5" id="QEK-w1-vUh"/>
@@ -457,6 +464,7 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
         <image name="Unknown" width="2325" height="3287"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="car" catalog="system" width="64" height="46"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>

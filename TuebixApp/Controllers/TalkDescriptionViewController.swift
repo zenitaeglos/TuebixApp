@@ -9,7 +9,26 @@
 import UIKit
 import CoreData
 
-class TalkDescriptionViewController: UIViewController {
+class TalkDescriptionViewController: UIViewController, UIActivityItemSource {
+    
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return "Tuebix"
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        if activityType == .postToTwitter {
+            return "\(xmlItem?.title ?? "Tuebix Conference") #TuebixApp"
+        }
+        
+        return "Vortrag: \(xmlItem?.title ?? "")\nPerson: \(xmlItem?.persons ?? "")\nRaum:\(xmlItem?.room ?? "")"
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        return xmlItem?.title ?? "Tuebix"
+    }
+    
+    
+    
 
     @IBOutlet weak var descriptionConferenceTextView: UITextView!
     @IBOutlet weak var titleConferenceLabel: UILabel!
@@ -32,6 +51,14 @@ class TalkDescriptionViewController: UIViewController {
         save()
     }
     
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+        let items = [self]
+        print(items)
+        
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.barButtonItem = sender as UIBarButtonItem
+        present(activityViewController, animated: true)
+    }
     /*
     // MARK: - Navigation
 
