@@ -12,6 +12,7 @@ import CoreData
 class FavoritesConferencesViewController: UIViewController {
 
     @IBOutlet weak var favoritesTableView: UITableView!
+    @IBOutlet weak var noFavoritesLabel: UILabel!
     
     private var xmlItems: [XmlTags] = []
     
@@ -24,6 +25,11 @@ class FavoritesConferencesViewController: UIViewController {
         self.xmlItems.removeAll()
         retrieveValues()
         favoritesTableView.reloadData()
+        
+        if self.xmlItems.count == 0 {
+            noFavoritesLabel.text = "You have no favorites yet"
+            favoritesTableView.isHidden = true
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -32,6 +38,15 @@ class FavoritesConferencesViewController: UIViewController {
         self.xmlItems.removeAll()
         retrieveValues()
         favoritesTableView.reloadData()
+        
+        if self.xmlItems.count == 0 {
+            noFavoritesLabel.text = "You have no favorites yet"
+            favoritesTableView.isHidden = true
+        }
+        else {
+            noFavoritesLabel.text = ""
+            favoritesTableView.isHidden = false
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,6 +93,11 @@ extension FavoritesConferencesViewController: UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         deleteValues(index: indexPath.row)
+        
+        if self.xmlItems.count == 0 {
+            noFavoritesLabel.text = "You have no favorites yet"
+            favoritesTableView.isHidden = true
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
