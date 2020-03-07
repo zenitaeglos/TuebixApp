@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites-->
+        <!--Tuebix-->
         <scene sceneID="Z16-vM-dGC">
             <objects>
                 <viewController id="lJ6-0C-Ge1" customClass="FavoritesConferencesViewController" customModule="TuebixApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-pj-rgi">
-                                <rect key="frame" x="0.0" y="64" width="414" height="749"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteConferenceCell" id="TKi-Go-4nG" customClass="FavoritesConferenceTableViewCell" customModule="TuebixApp" customModuleProvider="target">
@@ -108,7 +108,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GaS-je-XWR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="MnP-YB-nyF"/>
+                    <navigationItem key="navigationItem" title="Tuebix" id="QUp-0A-4Ew"/>
                     <connections>
                         <outlet property="favoritesTableView" destination="WiO-pj-rgi" id="Ab8-sg-48u"/>
                         <outlet property="noFavoritesLabel" destination="527-oE-4x3" id="33o-Hk-QjX"/>
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TyG-ir-a5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2466.666666666667" y="2138.8392857142858"/>
+            <point key="canvasLocation" x="-1556.521739130435" y="2138.8392857142858"/>
         </scene>
         <!--Anfahrt-->
         <scene sceneID="mL2-0a-cLD">
@@ -319,11 +319,11 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
             <objects>
                 <viewController id="vdr-jA-rHl" customClass="TalkDescriptionViewController" customModule="TuebixApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zV2-PZ-Hbm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moV-oJ-QIe">
-                                <rect key="frame" x="20" y="20" width="374" height="822"/>
+                                <rect key="frame" x="20" y="20" width="374" height="876"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-2U-t3I">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="2582"/>
@@ -419,7 +419,7 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVA-LN-2wY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="1729"/>
+            <point key="canvasLocation" x="197.10144927536234" y="1728.3482142857142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hBm-GF-cN3">
@@ -432,7 +432,7 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
                     </tabBar>
                     <connections>
                         <segue destination="7G5-nM-5zJ" kind="relationship" relationship="viewControllers" id="cCL-Cb-Ktp"/>
-                        <segue destination="lJ6-0C-Ge1" kind="relationship" relationship="viewControllers" id="jB1-KR-CPA"/>
+                        <segue destination="Xvh-Ab-kfA" kind="relationship" relationship="viewControllers" id="jB1-KR-CPA"/>
                         <segue destination="8MU-po-BEO" kind="relationship" relationship="viewControllers" id="HeS-EF-Yfk"/>
                     </connections>
                 </tabBarController>
@@ -458,6 +458,25 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSS-2F-Das" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2466.666666666667" y="1490.625"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="Gj7-Pk-XQe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xvh-Ab-kfA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="MnP-YB-nyF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E3t-aB-Pwk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lJ6-0C-Ge1" kind="relationship" relationship="rootViewController" id="TBH-5E-8Nq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iB-QU-8KP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2466.666666666667" y="2138.8392857142858"/>
         </scene>
     </scenes>
     <resources>
