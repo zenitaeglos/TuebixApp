@@ -119,7 +119,7 @@ extension FavoritesConferencesViewController {
                 
                 for result in results {
                     print("doing it")
-                    var xmlTag = XmlTags(title: "", persons: "", description: "", room: "", start: "", duration: "")
+                    var xmlTag = XmlTags(title: "", persons: "", description: "", room: "", start: "", duration: "", idTalk: "")
                     if let talkTitle = result.talkTitle {
                         xmlTag.title = talkTitle
                     }
@@ -137,6 +137,10 @@ extension FavoritesConferencesViewController {
                     }
                     if let duration = result.duration {
                         xmlTag.duration = duration
+                    }
+                    if let idTalk = result.idTalk {
+                        xmlTag.idTalk = idTalk
+                        print(idTalk)
                     }
                     self.xmlItems.append(xmlTag)
                 }
