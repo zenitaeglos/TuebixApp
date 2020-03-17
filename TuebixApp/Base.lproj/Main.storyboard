@@ -413,6 +413,7 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
                     <connections>
                         <outlet property="descriptionConferenceTextView" destination="lnm-aQ-WU5" id="QEK-w1-vUh"/>
                         <outlet property="durationConferenceLabel" destination="8JH-Q4-tfI" id="EJc-ki-7vk"/>
+                        <outlet property="starButtonItem" destination="OmI-xQ-K0p" id="MAN-EH-Iva"/>
                         <outlet property="startConferenceLabel" destination="184-sI-Fn5" id="dmc-5U-Js2"/>
                         <outlet property="titleConferenceLabel" destination="jBj-a7-gGg" id="d8f-60-v1r"/>
                     </connections>

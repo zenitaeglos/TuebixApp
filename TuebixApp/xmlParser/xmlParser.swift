@@ -16,6 +16,7 @@ struct XmlTags {
     var room: String
     var start: String
     var duration: String
+    var idTalk: String
 }
 
 
@@ -28,6 +29,7 @@ class FeedParser: NSObject, XMLParserDelegate {
     private var currentRoom: String = ""
     private var currentStart: String = ""
     private var currentDuration: String = ""
+    private var currentIdTalk: String = ""
     
     private var parserCompletionHandler: (([XmlTags]) -> Void)?
     
@@ -74,6 +76,7 @@ class FeedParser: NSObject, XMLParserDelegate {
             currentRoom = ""
             currentStart = ""
             currentDuration = ""
+            currentIdTalk = attributeDict["id"]!
         }
     }
     
@@ -104,7 +107,10 @@ class FeedParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         //TODO
         if elementName == "event" {
-            let xmlItem = XmlTags(title: currentTitle, persons: currentPerson, description: currentDescription, room: currentRoom, start: currentStart, duration: currentDuration)
+            print("inside the event")
+            print(currentIdTalk)
+            print("inside the event")
+            let xmlItem = XmlTags(title: currentTitle, persons: currentPerson, description: currentDescription, room: currentRoom, start: currentStart, duration: currentDuration, idTalk: currentIdTalk)
             self.xmlItems.append(xmlItem)
         }
     }
