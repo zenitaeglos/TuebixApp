@@ -145,9 +145,11 @@ extension CalenderViewController: UITableViewDelegate, UITableViewDataSource {
         
         var currentSectionItems: [XmlTags] = []
         
-        for item in currentxmlItems! {
-            if item.room == self.sectionsList[indexPath.section] {
-                currentSectionItems.append(item)
+        if self.currentxmlItems != nil {
+            for item in self.currentxmlItems! {
+                if item.room == self.sectionsList[indexPath.section] {
+                    currentSectionItems.append(item)
+                }
             }
         }
         
