@@ -107,9 +107,6 @@ class FeedParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         //TODO
         if elementName == "event" {
-            print("inside the event")
-            print(currentIdTalk)
-            print("inside the event")
             let xmlItem = XmlTags(title: currentTitle, persons: currentPerson, description: currentDescription, room: currentRoom, start: currentStart, duration: currentDuration, idTalk: currentIdTalk)
             self.xmlItems.append(xmlItem)
         }
