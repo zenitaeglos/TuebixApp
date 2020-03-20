@@ -72,6 +72,9 @@ class CalenderViewController: UIViewController {
     }
     
     func setSectionsHeader(xmlitems: [XmlTags]) {
+        /*
+         fill the sectionlist with the section headers of the fetch data
+         */
         self.sectionsList = []
         for item in xmlitems {
             if !self.sectionsList.contains(item.room) {
