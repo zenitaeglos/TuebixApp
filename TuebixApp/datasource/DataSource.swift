@@ -19,7 +19,7 @@ class DataSource {
     
     
     func lastConference() -> String {
-        return BASE_URL + years[years.count - 1] + extensionUrl
+        return BASE_URL + years[0] + extensionUrl
     }
     
     func allYearsConferences() -> [String] {

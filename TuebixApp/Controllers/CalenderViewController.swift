@@ -12,6 +12,8 @@ class CalenderViewController: UIViewController {
 
     private var xmlItems: [XmlTags]?
     private var currentxmlItems: [XmlTags]?
+    
+    private var sectionsList: [String] = []
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -47,7 +49,7 @@ class CalenderViewController: UIViewController {
         fetch all data from last conference
         */
         NetworkService.shared.getConferences(url: yearChosen, onSuccess: { (xmlItems) in
-            print(xmlItems.count)
+            self.setSectionsHeader(xmlitems: xmlItems)
             self.xmlItems = xmlItems
             self.currentxmlItems = xmlItems
             self.talksTableView.reloadData()
@@ -67,6 +69,18 @@ class CalenderViewController: UIViewController {
         let yearPicker = UIPickerView()
         yearPicker.delegate = self
         yearConferenceTextField.inputView = yearPicker
+    }
+    
+    func setSectionsHeader(xmlitems: [XmlTags]) {
+        /*
+         fill the sectionlist with the section headers of the fetch data
+         */
+        self.sectionsList = []
+        for item in xmlitems {
+            if !self.sectionsList.contains(item.room) {
+                self.sectionsList.append(item.room)
+            }
+        }
     }
     
     func createToolBar() {
@@ -113,28 +127,51 @@ extension CalenderViewController: UITableViewDelegate, UITableViewDataSource {
         guard let xmlItems = self.currentxmlItems else {
             return 0
         }
-        return xmlItems.count
+        var counter = 0
+        
+        for item in xmlItems {
+            if item.room == self.sectionsList[section] {
+                counter += 1
+            }
+        }
+
+        return counter
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PresentationCell") as? PresentationTableViewCell else {
             return UITableViewCell()
         }
-    
-        if let item = currentxmlItems?[indexPath.row] {
-            cell.setAttributes(xmlAttributes: item)
+        
+        var currentSectionItems: [XmlTags] = []
+        
+        if self.currentxmlItems != nil {
+            for item in self.currentxmlItems! {
+                if item.room == self.sectionsList[indexPath.section] {
+                    currentSectionItems.append(item)
+                }
+            }
         }
+        
+        let item = currentSectionItems[indexPath.row]
+        cell.setAttributes(xmlAttributes: item)
+        
         
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.sectionsList.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "TalkSegue", sender: indexPath)
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Room: " + self.sectionsList[section]
+    }
+    
     
 }
 
