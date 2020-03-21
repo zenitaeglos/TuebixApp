@@ -21,7 +21,7 @@ class InfoViewController: UIViewController {
     
     @IBAction func tuebixPressed(_ sender: UIButton) {
         
-        if let url = URL(string: "https://www.tuebix.org") {
+        if let url = URL(string: DataSource.shared.getBaseUrl()) {
             let config = SFSafariViewController.Configuration()
             config.entersReaderIfAvailable = true
             
