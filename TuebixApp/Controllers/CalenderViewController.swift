@@ -39,41 +39,18 @@ class CalenderViewController: UIViewController {
         createYearPicker()
         createToolBar()
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func fetchData(year yearChosen: String) {
         /*
         fetch all data from last conference
         */
         self.networkService.getConferences(url: yearChosen)
-        /*
-        NetworkService.shared.getConferences(url: yearChosen, onSuccess: { (xmlItems) in
-            self.setSectionsHeader(xmlitems: xmlItems)
-            self.xmlItems = xmlItems
-            self.currentxmlItems = xmlItems
-            self.talksTableView.reloadData()
-        }) { (errorMessage) in
-            let alert = UIAlertController(title: "Something went wrong", message: "We could not retrieve the data, the server might be down", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
-        
-        */
     }
     
     func createYearPicker() {
         /*
-         
+         Set the view for choosing between years
          */
         let yearPicker = UIPickerView()
         yearPicker.delegate = self
@@ -94,7 +71,7 @@ class CalenderViewController: UIViewController {
     
     func createToolBar() {
         /*
-         
+         Set toolbar for when the different years to choose are displayed
          */
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -160,6 +137,7 @@ extension CalenderViewController: UITableViewDelegate, UITableViewDataSource {
         guard let xmlItems = self.currentxmlItems else {
             return 0
         }
+        // set the counter for all elements for each section
         var counter = 0
         
         for item in xmlItems {
@@ -223,6 +201,7 @@ extension CalenderViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         yearConferenceTextField.text = DataSource.shared.getYearByPosition(position: row)
+        self.searchBar.text = ""
         fetchData(year: DataSource.shared.getYearConference(year: DataSource.shared.getYearByPosition(position: row)))
     }
 }

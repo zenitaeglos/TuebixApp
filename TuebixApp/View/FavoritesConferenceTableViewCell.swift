@@ -28,8 +28,7 @@ class FavoritesConferenceTableViewCell: UITableViewCell {
     }
     
     func setAttributes(xmlAttributes: XmlTags) {
-        print("los datos")
-        print(xmlAttributes)
+
         tittleConferenceLabel.text = xmlAttributes.title
         personConferenceLabel.text = xmlAttributes.persons
         startConferenceLabel.text = "Starts: \(xmlAttributes.start)"
