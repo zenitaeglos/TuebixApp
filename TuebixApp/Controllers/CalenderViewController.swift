@@ -8,7 +8,11 @@
 
 import UIKit
 
+//MARK: - CalenderViewController
+
 class CalenderViewController: UIViewController {
+    
+    private var networkService: NetworkService = NetworkService()
 
     private var xmlItems: [XmlTags]?
     private var currentxmlItems: [XmlTags]?
@@ -22,6 +26,7 @@ class CalenderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.networkService.delegate = self
         // Do any additional setup after loading the view.
         self.searchBar.delegate = self
         self.searchBar.placeholder = "Search talk"
@@ -48,6 +53,8 @@ class CalenderViewController: UIViewController {
         /*
         fetch all data from last conference
         */
+        self.networkService.getConferences(url: yearChosen)
+        /*
         NetworkService.shared.getConferences(url: yearChosen, onSuccess: { (xmlItems) in
             self.setSectionsHeader(xmlitems: xmlItems)
             self.xmlItems = xmlItems
@@ -60,6 +67,8 @@ class CalenderViewController: UIViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         }
+        
+        */
     }
     
     func createYearPicker() {
@@ -121,6 +130,30 @@ class CalenderViewController: UIViewController {
     }
 
 }
+
+
+//MARK: - NetworkServiceDelegate
+
+extension CalenderViewController: NetworkServiceDelegate {
+    func didReceiveData(_ dataFetched: [XmlTags]) {
+        self.setSectionsHeader(xmlitems: dataFetched)
+        self.xmlItems = dataFetched
+        self.currentxmlItems = dataFetched
+        self.talksTableView.reloadData()
+    }
+    
+    func didOcurrErrorInRetrieving(_ error: String) {
+        let alert = UIAlertController(title: "Something went wrong", message: "We could not retrieve the data, the server might be down", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+}
+
+//MARK: - UITableViewDelegate, UITAbleViewDataSource
 
 extension CalenderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -193,6 +226,8 @@ extension CalenderViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         fetchData(year: DataSource.shared.getYearConference(year: DataSource.shared.getYearByPosition(position: row)))
     }
 }
+
+//MARK: - UISearchBarDelegate
 
 extension CalenderViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
