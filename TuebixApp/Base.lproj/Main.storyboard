@@ -119,6 +119,39 @@
             </objects>
             <point key="canvasLocation" x="-1556.521739130435" y="2138.8392857142858"/>
         </scene>
+        <!--Info-->
+        <scene sceneID="cwA-Lc-T5A">
+            <objects>
+                <viewController id="cyO-G0-Uzj" customClass="InfoViewController" customModule="TuebixApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gtw-Fr-ikz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyp-Vo-aH0">
+                                <rect key="frame" x="20" y="114" width="374" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jyp-Vo-aH0" secondAttribute="height" multiplier="187:74" id="EDr-2U-kYg"/>
+                                </constraints>
+                                <state key="normal" image="home-alpha-background"/>
+                                <connections>
+                                    <action selector="tuebixPressed:" destination="cyO-G0-Uzj" eventType="touchUpInside" id="J1o-JW-So8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jyp-Vo-aH0" firstAttribute="top" secondItem="Uub-QH-hey" secondAttribute="top" constant="70" id="E60-Tl-9Fb"/>
+                            <constraint firstItem="Uub-QH-hey" firstAttribute="trailing" secondItem="jyp-Vo-aH0" secondAttribute="trailing" constant="20" id="Oja-iw-X6X"/>
+                            <constraint firstItem="jyp-Vo-aH0" firstAttribute="leading" secondItem="Uub-QH-hey" secondAttribute="leading" constant="20" id="tte-8k-tnZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uub-QH-hey"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Info" image="info" catalog="system" id="Gfu-gK-YZi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7Q-Zi-aKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4549.275362318841" y="2565.4017857142858"/>
+        </scene>
         <!--Anfahrt-->
         <scene sceneID="mL2-0a-cLD">
             <objects>
@@ -435,6 +468,7 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
                         <segue destination="7G5-nM-5zJ" kind="relationship" relationship="viewControllers" id="cCL-Cb-Ktp"/>
                         <segue destination="Xvh-Ab-kfA" kind="relationship" relationship="viewControllers" id="jB1-KR-CPA"/>
                         <segue destination="8MU-po-BEO" kind="relationship" relationship="viewControllers" id="HeS-EF-Yfk"/>
+                        <segue destination="cyO-G0-Uzj" kind="relationship" relationship="viewControllers" id="t32-oS-q5F"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWW-IX-oUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -484,6 +518,8 @@ Adresse: Sand 14, 72076 Tübingen, Germany</string>
         <image name="Unknown" width="2325" height="3287"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="car" catalog="system" width="64" height="46"/>
+        <image name="home-alpha-background" width="1280" height="220"/>
+        <image name="info" catalog="system" width="46" height="64"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>

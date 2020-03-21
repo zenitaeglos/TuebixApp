@@ -21,6 +21,7 @@
 		D9BDFE8A23DA117300F46CC9 /* FavoritesConferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BDFE8923DA117300F46CC9 /* FavoritesConferencesViewController.swift */; };
 		D9BDFE8C23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BDFE8B23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift */; };
 		D9D4DF2A242656510030BE64 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D4DF29242656510030BE64 /* DatabaseService.swift */; };
+		D9D4DF2D2426747E0030BE64 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D4DF2C2426747E0030BE64 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D9BDFE8923DA117300F46CC9 /* FavoritesConferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesConferencesViewController.swift; sourceTree = "<group>"; };
 		D9BDFE8B23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesConferenceTableViewCell.swift; sourceTree = "<group>"; };
 		D9D4DF29242656510030BE64 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		D9D4DF2C2426747E0030BE64 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		D92193A823D3716B00117623 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9D4DF2C2426747E0030BE64 /* InfoViewController.swift */,
 				D92193BA23D3E84000117623 /* TalkDescriptionViewController.swift */,
 				D92193B323D39CF400117623 /* CalenderViewController.swift */,
 				D9BDFE8923DA117300F46CC9 /* FavoritesConferencesViewController.swift */,
@@ -220,6 +223,7 @@
 				D9D4DF2A242656510030BE64 /* DatabaseService.swift in Sources */,
 				D993FC1A23D30DF000B42DFA /* DataSource.swift in Sources */,
 				D940FDED22CE29C90063189C /* FavoritesModel.xcdatamodeld in Sources */,
+				D9D4DF2D2426747E0030BE64 /* InfoViewController.swift in Sources */,
 				D9BDFE8C23DA16E300F46CC9 /* FavoritesConferenceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
