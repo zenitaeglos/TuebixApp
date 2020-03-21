@@ -29,4 +29,15 @@ class InfoViewController: UIViewController {
             present(safariViewController, animated: true, completion: nil)
         }
     }
+    
+    
+    @IBAction func authorButtonPressed(_ sender: UIButton) {
+        if let url = URL(string: DataSource.shared.getGithubUrl()) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            
+            let safariViewController = SFSafariViewController(url: url, configuration: config)
+            present(safariViewController, animated: true, completion: nil)
+        }
+    }
 }
