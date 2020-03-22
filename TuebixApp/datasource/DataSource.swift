@@ -17,6 +17,13 @@ class DataSource {
     
     private let years = ["2019", "2018", "2017", "2016", "2015"]
     
+    func getGithubUrl() -> String {
+        return "https://github.com/zenitaeglos/TuebixApp"
+    }
+    
+    func getBaseUrl() -> String {
+        return BASE_URL
+    }
     
     func lastConference() -> String {
         return BASE_URL + years[0] + extensionUrl
