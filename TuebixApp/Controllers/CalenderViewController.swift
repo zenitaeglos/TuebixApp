@@ -100,8 +100,10 @@ class CalenderViewController: UIViewController {
         */
         if (segue.identifier == "TalkSegue") {
             let controller = segue.destination  as! TalkDescriptionViewController
-            let row = (sender as! IndexPath).row
-            controller.xmlItem = currentxmlItems?[row]
+            //let row = (sender as! IndexPath).row
+            //controller.xmlItem = currentxmlItems?[row]
+            let talkElement = sender as! XmlTags
+            controller.xmlItem = talkElement
         }
         
     }
@@ -164,7 +166,14 @@ extension CalenderViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        // sort each section by starting time, making it from earlier to later
+        
+        currentSectionItems = currentSectionItems.sorted(by: { (firstTalk, secondTalk) -> Bool in
+            return firstTalk.start < secondTalk.start
+        })
+        
         let item = currentSectionItems[indexPath.row]
+
         cell.setAttributes(xmlAttributes: item)
         
         
@@ -176,15 +185,33 @@ extension CalenderViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "TalkSegue", sender: indexPath)
+        var currentSectionItems: [XmlTags] = []
+        
+        if self.currentxmlItems != nil {
+            for item in self.currentxmlItems! {
+                if item.room == self.sectionsList[indexPath.section] {
+                    currentSectionItems.append(item)
+                }
+            }
+        }
+        
+        // sort each section by starting time, making it from earlier to later
+        
+        currentSectionItems = currentSectionItems.sorted(by: { (firstTalk, secondTalk) -> Bool in
+            return firstTalk.start < secondTalk.start
+        })
+        
+        let item = currentSectionItems[indexPath.row]
+        // sender is am XmlTags type
+        self.performSegue(withIdentifier: "TalkSegue", sender: item)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Room: " + self.sectionsList[section]
     }
-    
-    
 }
+
+//MARK: - UIPickerDataSource, UIPickerViewDelegate
 
 extension CalenderViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

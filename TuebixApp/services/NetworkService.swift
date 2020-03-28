@@ -25,12 +25,17 @@ protocol NetworkServiceDelegate {
 
 class NetworkService {
     /*
-     Redo of this class on the way, doing a template design pattern
+     Network class for retrieving data.
+     doing a template design pattern
      */
     
+    // delegation of the implementation leaved to the class which needs networking
     var delegate: NetworkServiceDelegate?
     
     func getConferences(url xmlUrl: String) {
+        /*
+         given a url it retrieves all xml data and then lets the delegate implements its actions
+         */
         let request = URLRequest(url: URL(string: xmlUrl)!)
         let urlSession = URLSession.shared
         let task = urlSession.dataTask(with: request) { (data, response, error) in
